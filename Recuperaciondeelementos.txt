@@ -1,0 +1,26 @@
+#!/bin/bash
+clear
+
+echo "-------------------------------"
+echo "---Recuperacion de Elementos---"
+echo "-------------------------------"
+
+
+cd /home/mario/.Respaldo //Se ingresara al directorio donde se almaceno el respaldo de los archivos
+
+   //Hace referencia al directorio de donde se almaceno el respaldo del directorio eliminado
+cp /home/mario/.Respaldo/* /home/dizzy/Imágenes
+                        //Es el directorio hara la ilusion de recuperar los elementos que anteriormente fueron borrados pero que estuvieron
+                        //almacenados dentro del directorio .Respaldo copiandolos de regreso al directorio de origen
+
+clear //Se limpiara la pantalla
+
+shred -n 5 -zuv *
+//Para evitar replicas se eliminaran los archivos almacenados en el directorio .Respaldo
+//shred -n sobreescribira los documentos, mientras que el 5 significa que hara una sobreescritura 5 veces
+//z sobreescribira todos los archivos asignandoles un 0 de valor
+//u removera los archivos despues de sobreescribirlos
+//v mostrara el proceso al sistema
+
+
+clear //limpiara la pantalla
